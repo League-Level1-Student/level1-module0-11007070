@@ -17,68 +17,27 @@ public class Houses {
 		rob.turn(90);
 		rob.penDown();
 		rob.setPenWidth(5);
-		run2("red", 100);
-		run2("yellow", 150);
-		run2("blue", 90);
-		run2("pink", 200);
-		run2("orange", 120);
-		run2("green", 110);
-		run2("yellow", 170);
-		run2("red", 140);
-		run2("blue", 180);
-	}
-	public static void run(String height) {
-		
-		if (height.equals("small")) {
-			rob.setPenColor(65, 122, 13);
-			rob.move(15);
-			rob.turn(-90);
-			rob.setPenColor(Color.green);
-			rob.move(60);
-			rob.turn(90);
-			rob.move(30);
-			rob.turn(90);
-			rob.move(60);
-			rob.turn(-90);
-			rob.setPenColor(65, 122, 13);
-			rob.move(15);
-		}
-		else if (height.equals("medium")) {
-			rob.setPenColor(65, 122, 13);
-			rob.move(15);
-			rob.turn(-90);
-			rob.setPenColor(Color.green);
-			rob.move(120);
-			rob.turn(90);
-			rob.move(30);
-			rob.turn(90);
-			rob.move(120);
-			rob.turn(-90);
-		}
-		else if (height.equals("large")) {
-			rob.setPenColor(65, 122, 13);
-			rob.move(15);
-			rob.turn(-90);
-			rob.setPenColor(Color.green);
-			rob.move(250);
-			rob.turn(90);
-			rob.move(30);
-			rob.turn(90);
-			rob.move(250);
-			rob.turn(-90);
-		}
+		run("yellow", 100, "flatRoof");
+		run("red", 150, "pointyRoof");
+		run("orange", 70, "flatRoof");
+		run("blue", 170, "pointyRoof");
+		run("pink", 200, "pointyRoof");
+		run("green", 120, "flatRoof");
 	}
 	
-	public static void run2(String color, int height) {
+	public static void run(String color, int height, String roofType) {
 		if (color.equals("red")) {
 			rob.setPenColor(65, 122, 13);
 			rob.move(15);
 			rob.turn(-90);
 			rob.setPenColor(Color.red);
 			rob.move(height);
-			rob.turn(90);
-			rob.move(30);
-			rob.turn(90);
+			if (roofType.equals("flatRoof")) {
+				drawFlatRoof();
+			}
+			else if (roofType.equals("pointyRoof")) {
+				drawPointyRoof();
+			}
 			rob.move(height);
 			rob.turn(-90);
 		}
@@ -88,9 +47,12 @@ public class Houses {
 			rob.turn(-90);
 			rob.setPenColor(Color.orange);
 			rob.move(height);
-			rob.turn(90);
-			rob.move(30);
-			rob.turn(90);
+			if (roofType.equals("flatRoof")) {
+				drawFlatRoof();
+			}
+			else if (roofType.equals("pointyRoof")) {
+				drawPointyRoof();
+			}
 			rob.move(height);
 			rob.turn(-90);
 		}
@@ -100,9 +62,12 @@ public class Houses {
 			rob.turn(-90);
 			rob.setPenColor(Color.yellow);
 			rob.move(height);
-			rob.turn(90);
-			rob.move(30);
-			rob.turn(90);
+			if (roofType.equals("flatRoof")) {
+				drawFlatRoof();
+			}
+			else if (roofType.equals("pointyRoof")) {
+				drawPointyRoof();
+			}
 			rob.move(height);
 			rob.turn(-90);
 		}
@@ -112,9 +77,12 @@ public class Houses {
 			rob.turn(-90);
 			rob.setPenColor(Color.green);
 			rob.move(height);
-			rob.turn(90);
-			rob.move(30);
-			rob.turn(90);
+			if (roofType.equals("flatRoof")) {
+				drawFlatRoof();
+			}
+			else if (roofType.equals("pointyRoof")) {
+				drawPointyRoof();
+			}
 			rob.move(height);
 			rob.turn(-90);
 		}
@@ -124,9 +92,12 @@ public class Houses {
 			rob.turn(-90);
 			rob.setPenColor(Color.blue);
 			rob.move(height);
-			rob.turn(90);
-			rob.move(30);
-			rob.turn(90);
+			if (roofType.equals("flatRoof")) {
+				drawFlatRoof();
+			}
+			else if (roofType.equals("pointyRoof")) {
+				drawPointyRoof();
+			}
 			rob.move(height);
 			rob.turn(-90);
 		}
@@ -136,11 +107,28 @@ public class Houses {
 			rob.turn(-90);
 			rob.setPenColor(Color.pink);
 			rob.move(height);
-			rob.turn(90);
-			rob.move(30);
-			rob.turn(90);
+			if (roofType.equals("flatRoof")) {
+				drawFlatRoof();
+			}
+			else if (roofType.equals("pointyRoof")) {
+				drawPointyRoof();
+			}
 			rob.move(height);
 			rob.turn(-90);
 		}
+	}
+	
+	public static void drawPointyRoof() {
+		rob.turn(50);
+		rob.move(25);
+		rob.turn(85);
+		rob.move(25);
+		rob.turn(45);
+	}
+	
+	public static void drawFlatRoof() {
+		rob.turn(90);
+		rob.move(30);
+		rob.turn(90);
 	}
 }
