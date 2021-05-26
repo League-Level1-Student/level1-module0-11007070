@@ -9,7 +9,8 @@
 void setup() {
 
   //Set your canvas size
-
+  size(600,600);
+  background(0,0,0);
   //Set a background color  
 
 }

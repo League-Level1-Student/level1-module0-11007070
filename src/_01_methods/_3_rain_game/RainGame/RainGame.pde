@@ -8,8 +8,8 @@
 
 
 int score = 0;
-int bucketWidth = 50;
-int bucketHeight;
+int bucketWidth = 120;
+int bucketHeight = 50;
 PImage bucket;
 int y = 50;
 int x = 100;
@@ -45,7 +45,9 @@ void draw() {
   stroke(119,118,119);
   rect(mouseX, 550, 120, 50);
   
-  checkCatch(y);
+  if (y == 550) {
+  checkCatch(x);
+  }
   
   
   // Draw a raindrop (ellipse) at the top of the screen
@@ -83,11 +85,11 @@ void draw() {
 
 
 // DO NOT CHANGE THIS METHOD - CALL IT FROM THE DRAW METHOD 
-    void checkCatch(int x){
-         if (x > mouseX && x < mouseX+bucketWidth) {
+    void checkCatch(int xx){
+         if (xx > mouseX && xx < mouseX+120) {
             score++;
          }
-         else if (score > 0) {
+         else if (score > 0){
             score--;
          }
         println("Your score is now: " + score);
