@@ -16,6 +16,8 @@ public class MyFirstSwingGUI {
 	public void run() {
 
 		// 1. Create and initialize an object of the JFrame class
+		
+		
 
 		// 2. Set your JFrame object to be visible
 
