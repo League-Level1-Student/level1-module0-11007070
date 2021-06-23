@@ -4,6 +4,7 @@ package _02_gui_with_help._3_drum_kit;
  *    Level 1
  */
 
+import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
@@ -22,6 +23,7 @@ import javax.swing.JPanel;
 public class DrumKit implements MouseListener {
 	static boolean canPlaySounds = true; // Set this to false if your computer cannot play sounds
 	JLabel drumLabel;
+	JLabel cymbalLabel;
 
 	public void run() {
 
@@ -61,21 +63,27 @@ public class DrumKit implements MouseListener {
 		frame.pack();
 
 		// Add this MouseListener to drumLabel
-		
+		drumLabel.addMouseListener(this);
 		
 		// *** Write the code in the mouseClicked() method below
 
 		//  Set the layout of the panel to "new GridLayout()"
-
+		panel.setLayout(new GridLayout());
+		
 		//  Add a cymbal image to make a Drum Kit (one has been provided).
+		String cymbalImage = "cymbal.jpg";
+		cymbalLabel = createLabelImage(cymbalImage);
+		panel.add(cymbalLabel);
+		frame.pack();
 		//  You will need a different sound to go with this image.
 		//  Remember to add this MouseListener to it. Run the program.
 
 	}
-
-	public void mouseClicked(MouseEvent e) {
+	@Override
+	public void mousePressed(MouseEvent e) {
 		// Print "mouse clicked" to the console. Run your program and watch
 		// the console to see when this is printed.
+		System.out.println("mouse clicked");
 
 		JLabel labelClicked = (JLabel) e.getSource(); // This line gets the label
 														// that the mouse
@@ -125,11 +133,7 @@ public class DrumKit implements MouseListener {
 		}
 	}
 
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-
-	}
+	
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
