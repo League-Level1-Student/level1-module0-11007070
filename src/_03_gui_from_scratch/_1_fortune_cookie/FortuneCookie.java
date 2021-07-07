@@ -19,7 +19,13 @@ public class FortuneCookie implements ActionListener {
         
         button.addActionListener(this);
         
-        int rand = new Random().nextInt(5);
+        System.out.println("Button clicked");
+   }
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		int rand = new Random().nextInt(5);
         if (rand == 0) {
         	JOptionPane.showMessageDialog(null, "Your fortune is...");
         	JOptionPane.showMessageDialog(null, "You will soon meet a stranger who will change your life forever.");
@@ -40,14 +46,6 @@ public class FortuneCookie implements ActionListener {
         	JOptionPane.showMessageDialog(null, "Your fortune is...");
         	JOptionPane.showMessageDialog(null, "Always act as your best yourself. You never know who's watching.");
         }
-        
-        System.out.println("Button clicked");
-   }
-
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		JOptionPane.showMessageDialog(null, "Woohoo!");
 		
 	}
 }
